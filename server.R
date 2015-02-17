@@ -8,6 +8,7 @@
 library(shiny)
 
 
+
 # START Functions ---------------------------------------------------------------
 calcGuinier <- function(dat, bnd){
   interval <- bnd[1]:bnd[2]
