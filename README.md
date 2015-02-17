@@ -1,1 +1,1 @@
-# saxs_gui
+# SAXS fitter
