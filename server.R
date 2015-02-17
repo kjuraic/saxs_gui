@@ -43,16 +43,14 @@ calcPorod <- function(dat, bnd, n = 4){
   return(out)
 }
 
-
-# END Function ------------------------------------------------------------
-
-
-
 readNika1D <- function(fname)
 {
   dat <- read.table(fname,skip=23,col.names=c("q","intens","err","unknown"))
   return(dat)
 }
+
+
+# END Function ------------------------------------------------------------
 
 
 shinyServer(function(input, output, clientData, session) {
@@ -62,7 +60,6 @@ shinyServer(function(input, output, clientData, session) {
     if (is.null(saxsFile)) {
       out <- NULL
     } else {
-      #saxsFile <- "/home/kruno/TU/experiments/SAXS/141103_Aden/Pil1M/CSI_rot_stat/1D/cap_r_1M_C.dat"
       out <- readNika1D(saxsFile$datapath)
     }
     out
@@ -155,7 +152,6 @@ shinyServer(function(input, output, clientData, session) {
     else {
       dat <- saxsData()
       plot(dat[,1],dat[,1]^2*dat[,2],col='black',
-           log='y',
            xlim=c(0,dat[input$rangePlotInv[2],1]),
            xlab = 'Q', ylab = "Intensity * Q^2")
       abline(v=dat[input$rangeInv[1],1],col=4)

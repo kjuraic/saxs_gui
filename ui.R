@@ -15,9 +15,12 @@ shinyUI(fluidPage(
   # Sidebar with a slider input for number of bins
   sidebarLayout(
     sidebarPanel(
-      fileInput('saxsFile', 'Choose 1D SAXS file',
+      fileInput('saxsFile', 'Choose 1D SAXS files', 
+                multiple = FALSE,
                 accept=c('*.dat')),
+      
       tags$hr(),
+      
       sliderInput("rangePlotGun", "Guinier plot range:", min = 1, max = 1000, value = c(1,1000)),
       sliderInput("rangeGun", "Guinier fit range:", min = 1,max = 1000,value = c(1,1000)),
       sliderInput("rangePlotPor", "Porod plot range:", min = 1, max = 1000, value = c(1,1000)),
