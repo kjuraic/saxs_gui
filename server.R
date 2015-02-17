@@ -4,6 +4,7 @@
 #
 # http://shiny.rstudio.com
 #
+# Komentar
 
 library(shiny)
 
